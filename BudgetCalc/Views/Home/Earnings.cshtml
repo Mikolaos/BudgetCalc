@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Earnings";
+}
+
+@model List<BudgetCalc.Models.Earning>
+
+<div class="text-center">
+    <h1 class="display-4">Earnings</h1>
+    <br />
+    <hr />
+    <h3>Total Monthly Earnings $@ViewBag.TotalMonthlyEarnings</h3>
+    <br />
+    <div>
+    <a asp-controller="Home" asp-action="AddAndModifyEarning" class="btn btn-secondary">Create new</a>
+</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Value</th>
+                <th>Description</th>
+                <th>Interval</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var earning in Model)
+            {
+                <tr>
+                    <td>@earning.Id</td>
+                    <td>@earning.Value</td>
+                    <td>@earning.Description</td>
+                    <td>@earning.Interval</td>
+                    <td>
+                        <a asp-action="AddAndModifyEarning" asp-route-id="@earning.Id">Edit</a> |
+                        <a asp-action="DeleteEarning" asp-route-id="@earning.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

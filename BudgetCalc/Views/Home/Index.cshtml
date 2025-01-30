@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container text-center">
+    <h1 class="display-4 mb-4">Welcome to BudgetCalc</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Manage Your Expenses</h5>
+                    <p class="card-text">View your expenses or add new ones.</p>
+                    <a asp-controller="Home" asp-action="Expenses" class="btn btn-primary">View Expenses</a>
+                    <a asp-controller="Home" asp-action="AddAndModifyExpense" class="btn btn-secondary">Add Expense</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Manage Your Earnings</h5>
+                    <p class="card-text">Check your earnings or add new income.</p>
+                    <a asp-controller="Home" asp-action="Earnings" class="btn btn-primary">View Earnings</a>
+                    <a asp-controller="Home" asp-action="AddAndModifyEarning" class="btn btn-secondary">Add Earning</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

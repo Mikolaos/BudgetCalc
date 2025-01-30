@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Summary";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Summary</h1>
+    <br />
+    <h3>Earnings This Month: $@ViewBag.MonthlyEarnings</h3>
+    <h3>Expenses This Month: $@ViewBag.MonthlyExpenses</h3>
+    <hr />
+    <h2>Budget: $@ViewBag.Budget</h2>
+    <h3>Budget Overview</h3>
+    <img src="@Url.Action("GenerateSummaryChart", "Home")" alt="Summary Chart" />
+</div>
